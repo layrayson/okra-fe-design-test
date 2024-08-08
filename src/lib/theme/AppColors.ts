@@ -13,6 +13,7 @@ export const AppColors = {
     400: "#D2BCFF",
     500: "#BA9AFF",
     border: "#824FE7",
+    ring: "#8957EF33",
     700: "#FEFEFF",
     "on-primary": "#FEFEFF",
   },

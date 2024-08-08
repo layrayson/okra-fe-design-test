@@ -25,6 +25,8 @@ const config: Config = {
           400: AppColors.primary[400],
           500: AppColors.primary[500],
           border: AppColors.primary.border,
+          ring: AppColors.primary.ring,
+
           700: AppColors.primary[700],
           "on-primary": AppColors.primary["on-primary"],
         },
