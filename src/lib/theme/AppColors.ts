@@ -15,6 +15,10 @@ export const AppColors = {
     "text-on-primary": "#FEFEFF",
   },
 
+  blue: {
+    100: "#EAF3FF",
+    500: "#1A6AED",
+  },
   orange: {
     400: "#FFB693",
     500: "#FF8C51",

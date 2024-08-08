@@ -25,6 +25,10 @@ const config: Config = {
           700: AppColors.primary[700],
           "text-on-primary": AppColors.primary["text-on-primary"],
         },
+        blue: {
+          100: AppColors.blue[100],
+          500: AppColors.blue[500],
+        },
         orange: {
           400: AppColors.orange[400],
           500: AppColors.orange[500],
