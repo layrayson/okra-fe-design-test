@@ -5,6 +5,7 @@ export const AppColors = {
     label: "#464649",
     900: "#202022",
     "on-neutral": "#F2F2F3",
+    secondary: "#5E5E60",
   },
   primary: {
     200: "#A277FF",

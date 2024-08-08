@@ -6,7 +6,7 @@ import { Brinte, GreenIndicator, LinkedIn, Slack, X, Youtube } from "./Icon";
 const Footer = () => {
   return (
     <footer>
-      <div className="bg-black-label/[0.19]">
+      <div className="bg-black-label/[0.19] px-4">
         <div className="max-w-[83rem] mx-auto bg-[url('/assets/images/brinte_bg_text.svg')] bg-no-repeat bg-bottom bg-contain">
           <div className="pt-60 pb-[19.875rem]">
             <div className="max-w-[51.375rem] mx-auto">

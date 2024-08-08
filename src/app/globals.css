@@ -3,17 +3,5 @@
 @tailwind utilities;
 
 html {
-  font-size: 14px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Manrope", sans-serif;
-}
-
-p {
-  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 }

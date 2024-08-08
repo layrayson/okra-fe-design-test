@@ -17,6 +17,7 @@ const config: Config = {
           label: AppColors.black.label,
           900: AppColors.black[900],
           "on-neutral": AppColors.black["on-neutral"],
+          secondary: AppColors.black["secondary"],
         },
         primary: {
           200: AppColors.primary[200],
@@ -35,7 +36,6 @@ const config: Config = {
           500: AppColors.orange[500],
         },
       },
-
       fontFamily: {
         sans: ["var(--font-pptelegraf)"],
       },
