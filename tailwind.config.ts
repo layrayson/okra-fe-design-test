@@ -1,7 +1,7 @@
 import { AppColors } from "./src/lib/theme/AppColors";
 import type { Config } from "tailwindcss";
 const base = 16;
-const customSpacings = [95, 650, 1312];
+const customSpacings = [95, 139, 301, 318, 650, 822, 1312, 1328];
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -45,6 +45,15 @@ const config: Config = {
       fontSize: {
         xxs: `${8 / base}rem`,
         "13px": `${13 / base}rem`,
+      },
+      opacity: {
+        "19": ".19",
+      },
+      backgroundImage: {
+        "brite-text": "url('/assets/images/brinte_bg_text.svg')",
+      },
+      lineHeight: {
+        "22px": `${22 / base}rem`,
       },
     },
   },
