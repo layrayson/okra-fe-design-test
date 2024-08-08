@@ -6,17 +6,17 @@ import { Brinte, GreenIndicator, LinkedIn, Slack, X, Youtube } from "./Icon";
 const Footer = () => {
   return (
     <footer>
-      <div className="bg-black-label/19">
-        <div className="max-w-1328px mx-auto bg-brite-text bg-no-repeat bg-bottom bg-contain">
-          <div className="pt-60 pb-318px">
-            <div className="max-w-822px mx-auto">
+      <div className="bg-black-label/[0.19]">
+        <div className="max-w-[83rem] mx-auto bg-[url('/assets/images/brinte_bg_text.svg')] bg-no-repeat bg-bottom bg-contain">
+          <div className="pt-60 pb-[19.875rem]">
+            <div className="max-w-[51.375rem] mx-auto">
               <div className="flex justify-between">
-                <div className="w-301px">
+                <div className="w-[18.8125rem]">
                   <Brinte className="h-10 w-10" />
                 </div>
 
                 <div className="grow flex gap-x-8">
-                  <div className="flex flex-col gap-y-6 min-w-139px">
+                  <div className="flex flex-col gap-y-6 min-w-[8.6875rem]">
                     <h5 className="text-xs font-medium leading-22px text-black-subdued">
                       RESOURCES
                     </h5>
@@ -51,7 +51,7 @@ const Footer = () => {
                       </Link>
                     ))}
                   </div>
-                  <div className="flex flex-col gap-y-6 min-w-139px">
+                  <div className="flex flex-col gap-y-6 min-w-[8.6875rem]">
                     <h5 className="text-xs font-medium leading-22px text-black-subdued">
                       CONNECT WITH US
                     </h5>
@@ -91,7 +91,7 @@ const Footer = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col gap-y-6 min-w-139px">
+                  <div className="flex flex-col gap-y-6 min-w-[8.6875rem]">
                     <h5 className="text-xs font-medium leading-22px text-black-subdued">
                       LEGAL
                     </h5>

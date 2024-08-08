@@ -6,7 +6,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <nav className="">
-      <div className="h-16 flex justify-between items-center max-w-1312px mx-auto">
+      <div className="h-16 flex justify-between items-center max-w-[82rem] mx-auto">
         <div className="flex items-center gap-x-1">
           <div className="relative w-24 h-6">
             <Image
@@ -77,7 +77,7 @@ const Header = () => {
           <Button className="bg-transparent text-black-label text-13px px-3 font-medium">
             Login
           </Button>
-          <Button className="bg-black-900 text-black-on-neutral text-13px w-95px font-medium">
+          <Button className="bg-black-900 text-black-on-neutral text-13px w-[5.9375rem] font-medium">
             Join waitlist
           </Button>
         </div>

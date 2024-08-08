@@ -1,5 +1,5 @@
 const ContactUsForm = () => {
-  return <div>Contact us form</div>;
+  return <div className="min-h-[calc(100vh - 3.5rem)]"></div>;
 };
 
 export default ContactUsForm;
