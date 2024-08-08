@@ -15,6 +15,7 @@ export const AppColors = {
     700: "#FEFEFF",
     "on-primary": "#FEFEFF",
   },
+  "border-light": "#DADADB",
 
   blue: {
     100: "#EAF3FF",
