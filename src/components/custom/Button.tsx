@@ -16,7 +16,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={"flex items-center justify-center " + className}
+      className={"flex items-center justify-center rounded-md h-9 " + className}
       onClick={onClick}
       type={type}
       disabled={disabled}

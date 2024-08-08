@@ -4,7 +4,7 @@ export const AppColors = {
     subdued: "#909092",
     label: "#464649",
     900: "#202022",
-    "text-on-neutral": "#F2F2F3",
+    "on-neutral": "#F2F2F3",
   },
   primary: {
     200: "#A277FF",
@@ -12,7 +12,7 @@ export const AppColors = {
     500: "#BA9AFF",
     border: "#824FE7",
     700: "#FEFEFF",
-    "text-on-primary": "#FEFEFF",
+    "on-primary": "#FEFEFF",
   },
 
   blue: {

@@ -1,6 +1,7 @@
 import { AppColors } from "./src/lib/theme/AppColors";
 import type { Config } from "tailwindcss";
-
+const base = 16;
+const customSpacings = [95, 650, 1312];
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,7 +16,7 @@ const config: Config = {
           subdued: AppColors.black.subdued,
           label: AppColors.black.label,
           900: AppColors.black[900],
-          "text-on-neutral": AppColors.black["text-on-neutral"],
+          "on-neutral": AppColors.black["on-neutral"],
         },
         primary: {
           200: AppColors.primary[200],
@@ -23,7 +24,7 @@ const config: Config = {
           500: AppColors.primary[500],
           border: AppColors.primary.border,
           700: AppColors.primary[700],
-          "text-on-primary": AppColors.primary["text-on-primary"],
+          "on-primary": AppColors.primary["on-primary"],
         },
         blue: {
           100: AppColors.blue[100],
@@ -34,8 +35,16 @@ const config: Config = {
           500: AppColors.orange[500],
         },
       },
+      spacing: customSpacings.reduce((acc, value) => {
+        acc[`${value}px`] = `${value / base}rem`;
+        return acc;
+      }, {} as Record<string, string>),
       fontFamily: {
         sans: ["var(--font-pptelegraf)"],
+      },
+      fontSize: {
+        xxs: `${8 / base}rem`,
+        "13px": `${13 / base}rem`,
       },
     },
   },
