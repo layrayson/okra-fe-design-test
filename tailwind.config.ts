@@ -15,6 +15,7 @@ const config: Config = {
           200: AppColors.black[200],
           subdued: AppColors.black.subdued,
           label: AppColors.black.label,
+          600: AppColors.black[600],
           900: AppColors.black[900],
           "on-neutral": AppColors.black["on-neutral"],
           secondary: AppColors.black["secondary"],

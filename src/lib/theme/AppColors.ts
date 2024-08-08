@@ -3,6 +3,7 @@ export const AppColors = {
     200: "#E6E6E7",
     subdued: "#909092",
     label: "#464649",
+    600: "#303032",
     900: "#202022",
     "on-neutral": "#F2F2F3",
     secondary: "#5E5E60",

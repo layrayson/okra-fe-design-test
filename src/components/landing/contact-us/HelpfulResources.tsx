@@ -1,4 +1,6 @@
 import { SectionAlign } from "@/components/shared/SectionAlign";
+import { CardComponent } from "../common/CardComponent";
+import { Book, BookOpen, Slack } from "@/components/shared/Icon";
 
 const HelpfulResources = () => {
   return (
@@ -22,9 +24,35 @@ const HelpfulResources = () => {
           </div>
           <div>
             <div className="grid grid-rows-2 grid-cols-2 grid-flow-col gap-4">
-              <div className="row-span-2 col-span-1 ...">01</div>
-              <div className="row-span-1 col-span-1 ...">02</div>
-              <div className="row-span-1 col-span-1 ...">03</div>
+              <div className="row-span-2 col-span-1">
+                <CardComponent
+                  name={"Brinte docs"}
+                  description={"See Brinte docs"}
+                  path={"/docs"}
+                  icon={<BookOpen className="w-4 h-4" />}
+                  className={"bg-primary-400 h-[23.25rem]"}
+                />
+              </div>
+              <div className="row-span-1 col-span-1">
+                {" "}
+                <CardComponent
+                  name={"Brinte community"}
+                  description={"Join Slack community"}
+                  path={"/community"}
+                  icon={<Slack className="w-4 h-4" />}
+                  className={"bg-orange-400 h-full"}
+                />
+              </div>
+              <div className="row-span-1 col-span-1">
+                {" "}
+                <CardComponent
+                  name={"Brinte support"}
+                  description={"Go to help center"}
+                  path={"/support"}
+                  icon={<Book className="w-4 h-4" />}
+                  className={"bg-white h-full"}
+                />
+              </div>
             </div>
           </div>
         </div>
