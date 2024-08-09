@@ -8,7 +8,7 @@ const ContactUsForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   return (
     <SectionAlign>
-      <div className="py-32">
+      <div className="py-32 bg-surface-bg">
         {!formSubmitted ? (
           <div className="grid grid-cols-2 gap-x-8">
             <div>

@@ -118,7 +118,7 @@ const Footer = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-border-light">
+                <div className="mt-8 pt-8 border-t border-neutral-400/30">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-x-2">
                       <GreenIndicator className="h-4 w-4" />{" "}

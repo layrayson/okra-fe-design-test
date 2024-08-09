@@ -11,7 +11,7 @@ type Props = React.SelectHTMLAttributes<HTMLSelectElement> & {
   containerClassName?: string;
   value?: string;
   error?: boolean;
-  errorText?: string;
+  errortext?: string;
   options: string[];
 };
 
@@ -170,8 +170,8 @@ const Select = (props: Props) => {
           </ul>
         )}
       </div>
-      {props.errorText && props.error && (
-        <FormErrorText text={props.errorText} />
+      {props.errortext && props.error && (
+        <FormErrorText text={props.errortext} />
       )}
     </div>
   );

@@ -44,8 +44,8 @@ const FormComponent = ({ handleFormSubmitted }: Props) => {
                 placeholder="First name"
                 value={values.firstName}
                 onChange={(e) => setFieldValue("firstName", e.target.value)}
-                error={!!(errors.firstName && touched.firstName)}
-                errorText={errors.firstName}
+                error={Boolean(errors.firstName && touched.firstName)}
+                errortext={errors.firstName}
               />
             </div>
             <div className="flex-1">
@@ -54,8 +54,8 @@ const FormComponent = ({ handleFormSubmitted }: Props) => {
                 placeholder="Last name"
                 value={values.lastName}
                 onChange={(e) => setFieldValue("lastName", e.target.value)}
-                error={!!(errors.lastName && touched.lastName)}
-                errorText={errors.lastName}
+                error={Boolean(errors.lastName && touched.lastName)}
+                errortext={errors.lastName}
               />
             </div>
           </div>
@@ -65,8 +65,8 @@ const FormComponent = ({ handleFormSubmitted }: Props) => {
               placeholder="Email"
               value={values.email}
               onChange={(e) => setFieldValue("email", e.target.value)}
-              error={!!(errors.email && touched.email)}
-              errorText={errors.email}
+              error={Boolean(errors.email && touched.email)}
+              errortext={errors.email}
             />
           </div>
           <div>
@@ -75,8 +75,8 @@ const FormComponent = ({ handleFormSubmitted }: Props) => {
               placeholder="Company name"
               value={values.companyName}
               onChange={(e) => setFieldValue("companyName", e.target.value)}
-              error={!!(errors.companyName && touched.companyName)}
-              errorText={errors.companyName}
+              error={Boolean(errors.companyName && touched.companyName)}
+              errortext={errors.companyName}
             />
           </div>
           <div>
@@ -85,8 +85,8 @@ const FormComponent = ({ handleFormSubmitted }: Props) => {
               placeholder="Website URL"
               value={values.websiteURL}
               onChange={(e) => setFieldValue("websiteURL", e.target.value)}
-              error={!!(errors.websiteURL && touched.websiteURL)}
-              errorText={errors.websiteURL}
+              error={Boolean(errors.websiteURL && touched.websiteURL)}
+              errortext={errors.websiteURL}
             />
           </div>
           <div>
@@ -103,8 +103,8 @@ const FormComponent = ({ handleFormSubmitted }: Props) => {
                 "Blog or publication",
                 "Others",
               ]}
-              error={!!(errors.howDidYouFindUs && touched.howDidYouFindUs)}
-              errorText={errors.howDidYouFindUs}
+              error={Boolean(errors.howDidYouFindUs && touched.howDidYouFindUs)}
+              errortext={errors.howDidYouFindUs}
             />
           </div>
           <div>
@@ -112,15 +112,14 @@ const FormComponent = ({ handleFormSubmitted }: Props) => {
               placeholder="Message"
               value={values.message}
               onChange={(e) => setFieldValue("message", e.target.value)}
-              error={!!(errors.message && touched.message)}
-              errorText={errors.message}
+              error={Boolean(errors.message && touched.message)}
+              errortext={errors.message}
             />
           </div>
 
           <div>
             <Button
               type="submit"
-              onClick={() => console.log({ errors, values }, "errors")}
               className={`${
                 !isPending
                   ? "bg-primary-border  min-w-[6.75rem] text-primary-on-primary"

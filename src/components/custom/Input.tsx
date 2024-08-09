@@ -4,7 +4,7 @@ import { FormErrorText } from "../landing/common/FormErrorText";
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   error?: boolean;
-  errorText?: string;
+  errortext?: string;
 };
 
 export const Input = ({ className, error = false, ...props }: Props) => {
@@ -54,7 +54,7 @@ export const Input = ({ className, error = false, ...props }: Props) => {
         </label>
       </div>
 
-      {props.errorText && error && <FormErrorText text={props.errorText} />}
+      {props.errortext && error && <FormErrorText text={props.errortext} />}
     </div>
   );
 };
