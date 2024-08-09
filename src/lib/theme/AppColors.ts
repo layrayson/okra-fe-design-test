@@ -23,6 +23,7 @@ export const AppColors = {
     500: "#FF401E",
   },
   "border-light": "#DADADB",
+  "surface-bg": "#FEFEFF",
 
   blue: {
     100: "#EAF3FF",

@@ -43,6 +43,7 @@ const config: Config = {
           500: AppColors.orange[500],
         },
         "border-light": AppColors["border-light"],
+        "surface-bg": AppColors["surface-bg"],
       },
       fontFamily: {
         sans: ["var(--font-pptelegraf)"],

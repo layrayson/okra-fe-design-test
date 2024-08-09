@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 type Props = { children: ReactNode };
 const Layout = ({ children }: Props) => {
   return (
-    <div>
+    <div className="bg-surface-bg">
       <Header />
       {children}
       <Footer />
