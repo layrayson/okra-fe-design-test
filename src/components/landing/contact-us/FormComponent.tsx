@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/custom/Button";
 import { Input } from "@/components/custom/Input";
 import Select from "@/components/custom/Select";
 import { TextArea } from "@/components/custom/TextArea";
@@ -42,6 +43,12 @@ const FormComponent = () => {
         </div>
         <div>
           <TextArea placeholder="Message" />
+        </div>
+
+        <div>
+          <Button className="bg-primary-border w-[6.75rem] text-primary-on-primary text-13px">
+            Contact sales
+          </Button>
         </div>
       </div>
     </div>
