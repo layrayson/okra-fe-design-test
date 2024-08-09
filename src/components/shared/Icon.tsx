@@ -7,6 +7,7 @@ import LinkedIn from "../../../public/assets/icons/linkedin_icon.svg";
 import Slack from "../../../public/assets/icons/slack_icon.svg";
 import X from "../../../public/assets/icons/x_icon.svg";
 import Youtube from "../../../public/assets/icons/youtube_icon.svg";
+import ChevronDown from "../../../public/assets/icons/chevron_down_icon.svg";
 
 export {
   ArrowUpRight,
@@ -18,4 +19,5 @@ export {
   Slack,
   X,
   Youtube,
+  ChevronDown,
 };
