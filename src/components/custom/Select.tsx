@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "../shared/Icon";
+import { FormErrorText } from "../landing/common/FormErrorText";
 
 type Props = React.SelectHTMLAttributes<HTMLSelectElement> & {
   onChange?: (
@@ -10,6 +11,7 @@ type Props = React.SelectHTMLAttributes<HTMLSelectElement> & {
   containerClassName?: string;
   value?: string;
   error?: boolean;
+  errorText?: string;
   options: string[];
 };
 
@@ -99,72 +101,77 @@ const Select = (props: Props) => {
   }, [isOpen]);
 
   return (
-    <div
-      ref={containerRef}
-      className={
-        "flex flex-col max-w-full relative " + props.containerClassName
-      }
-    >
+    <div className="relative">
       <div
-        onClick={handleSelectClick}
-        className={`h-14 px-4 py-1  rounded-md bg-black-on-neutral text-13px flex-grow flex  items-center transition-all duration-200 ease-in-out border-[1.5px] ${
-          isOpen && !props.error
-            ? "border-primary-border ring-4 ring-primary-ring "
-            : "border-transparent"
-        } ${props.error ? "border-danger-500 ring-danger-100 ring-4" : ""} ${
-          props.className
-        }`}
+        ref={containerRef}
+        className={
+          "flex flex-col max-w-full relative " + props.containerClassName
+        }
       >
-        <div className="flex justify-items-stretch items-center flex-grow">
-          <p
-            className={`text-13px text-black-subdued leading-5 absolute top-1/2  translate-y-[-50%] transform transition-all duration-200 ease-in-out pointer-events-none  ${
-              props.value ? "top-[1.15rem] text-[0.625rem]" : ""
-            }`}
-          >
-            {props.placeholder}
-          </p>
-          <p
-            className={`text-13px text-black-900 leading-5 absolute translate-y-[0.5rem] transform transition-all duration-200 ease-in-out pointer-events-none`}
-          >
-            {props.value}
-          </p>
-          <ChevronDown
-            className={`h-4 w-4 right-4 absolute ${
-              props.value ? "translate-y-[0.5rem]" : ""
-            }`}
-          />
-        </div>
-      </div>
-
-      {isOpen && !props.disabled && (
-        <ul
-          ref={menuRef}
-          className={`max-h-[326px] p-1 bg-white border border-border-light shadow-[0px_4px_4px_0px_#3F47590A,0px_8px_8px_0px_#00000014] w-full absolute z-[1000] overflow-y-auto overflow-x-hidden rounded-lg ${
-            menuPosition === "bottom" ? "top-[50px]" : ""
-          } ${menuPosition === "top" ? "bottom-[50px]" : ""} mt-[16px]`}
-          onKeyDown={handleKeyDown}
-          tabIndex={0}
-          role="listbox"
+        <div
+          onClick={handleSelectClick}
+          className={`h-14 px-4 py-1  rounded-md bg-black-on-neutral text-13px flex-grow flex  items-center transition-all duration-200 ease-in-out border-[1.5px] ${
+            isOpen && !props.error
+              ? "border-primary-border ring-4 ring-primary-ring "
+              : "border-transparent"
+          } ${props.error ? "border-danger-500 ring-danger-100 ring-4" : ""} ${
+            props.className
+          }`}
         >
-          {props.options.map((el, index) => (
-            <li
-              key={"select-option-" + index}
-              className={`min-h-8 py-1 px-2 flex items-center cursor-pointer ${
-                el === props.value ? "bg-black-on-neutral" : "bg-white"
-              } hover:bg-black-on-neutral rounded-md ${
-                focusedIndex === index ? "bg-black-on-neutral" : ""
+          <div className="flex justify-items-stretch items-center flex-grow">
+            <p
+              className={`text-13px text-black-subdued leading-5 absolute top-1/2  translate-y-[-50%] transform transition-all duration-200 ease-in-out pointer-events-none  ${
+                props.value ? "top-[1.15rem] text-[0.625rem]" : ""
               }`}
-              onClick={(event) => handleOptionClick(event, el)}
-              onMouseEnter={() => setFocusedIndex(index)}
-              role="option"
-              aria-selected={el === props.value}
             >
-              <p className="font-medium text-black-900 text-sm leading-22px">
-                {el}
-              </p>
-            </li>
-          ))}
-        </ul>
+              {props.placeholder}
+            </p>
+            <p
+              className={`text-13px text-black-900 leading-5 absolute translate-y-[0.5rem] transform transition-all duration-200 ease-in-out pointer-events-none`}
+            >
+              {props.value}
+            </p>
+            <ChevronDown
+              className={`h-4 w-4 right-4 absolute ${
+                props.value ? "translate-y-[0.5rem]" : ""
+              }`}
+            />
+          </div>
+        </div>
+
+        {isOpen && !props.disabled && (
+          <ul
+            ref={menuRef}
+            className={`max-h-[326px] p-1 bg-white border border-border-light shadow-[0px_4px_4px_0px_#3F47590A,0px_8px_8px_0px_#00000014] w-full absolute z-[1000] overflow-y-auto overflow-x-hidden rounded-lg ${
+              menuPosition === "bottom" ? "top-[50px]" : ""
+            } ${menuPosition === "top" ? "bottom-[50px]" : ""} mt-[16px]`}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role="listbox"
+          >
+            {props.options.map((el, index) => (
+              <li
+                key={"select-option-" + index}
+                className={`min-h-8 py-1 px-2 flex items-center cursor-pointer ${
+                  el === props.value ? "bg-black-on-neutral" : "bg-white"
+                } hover:bg-black-on-neutral rounded-md ${
+                  focusedIndex === index ? "bg-black-on-neutral" : ""
+                }`}
+                onClick={(event) => handleOptionClick(event, el)}
+                onMouseEnter={() => setFocusedIndex(index)}
+                role="option"
+                aria-selected={el === props.value}
+              >
+                <p className="font-medium text-black-900 text-sm leading-22px">
+                  {el}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      {props.errorText && props.error && (
+        <FormErrorText text={props.errorText} />
       )}
     </div>
   );

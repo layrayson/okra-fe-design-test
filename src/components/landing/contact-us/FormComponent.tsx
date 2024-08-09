@@ -11,7 +11,10 @@ import {
 import { useFormik } from "formik";
 import { useState } from "react";
 
-const FormComponent = () => {
+type Props = {
+  handleFormSubmitted: (val: boolean) => void;
+};
+const FormComponent = ({ handleFormSubmitted }: Props) => {
   const [howDidYouFindUs, setHowDidYouFindUs] = useState<string>();
   const [isPending, setisPending] = useState(false);
   const { handleSubmit, errors, values, touched, setFieldValue } = useFormik({
@@ -22,6 +25,11 @@ const FormComponent = () => {
     validationSchema: contactusFormSchema,
     onSubmit: (values) => {
       setisPending(true);
+      setTimeout(() => {
+        setisPending(false);
+        handleFormSubmitted(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 2000);
     },
   });
 
@@ -37,6 +45,7 @@ const FormComponent = () => {
                 value={values.firstName}
                 onChange={(e) => setFieldValue("firstName", e.target.value)}
                 error={!!(errors.firstName && touched.firstName)}
+                errorText={errors.firstName}
               />
             </div>
             <div className="flex-1">
@@ -46,6 +55,7 @@ const FormComponent = () => {
                 value={values.lastName}
                 onChange={(e) => setFieldValue("lastName", e.target.value)}
                 error={!!(errors.lastName && touched.lastName)}
+                errorText={errors.lastName}
               />
             </div>
           </div>
@@ -56,6 +66,7 @@ const FormComponent = () => {
               value={values.email}
               onChange={(e) => setFieldValue("email", e.target.value)}
               error={!!(errors.email && touched.email)}
+              errorText={errors.email}
             />
           </div>
           <div>
@@ -65,6 +76,7 @@ const FormComponent = () => {
               value={values.companyName}
               onChange={(e) => setFieldValue("companyName", e.target.value)}
               error={!!(errors.companyName && touched.companyName)}
+              errorText={errors.companyName}
             />
           </div>
           <div>
@@ -74,6 +86,7 @@ const FormComponent = () => {
               value={values.websiteURL}
               onChange={(e) => setFieldValue("websiteURL", e.target.value)}
               error={!!(errors.websiteURL && touched.websiteURL)}
+              errorText={errors.websiteURL}
             />
           </div>
           <div>
@@ -91,6 +104,7 @@ const FormComponent = () => {
                 "Others",
               ]}
               error={!!(errors.howDidYouFindUs && touched.howDidYouFindUs)}
+              errorText={errors.howDidYouFindUs}
             />
           </div>
           <div>
@@ -99,6 +113,7 @@ const FormComponent = () => {
               value={values.message}
               onChange={(e) => setFieldValue("message", e.target.value)}
               error={!!(errors.message && touched.message)}
+              errorText={errors.message}
             />
           </div>
 

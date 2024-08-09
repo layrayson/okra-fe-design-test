@@ -1,8 +1,10 @@
 "use client";
 import React, { useRef, useState } from "react";
+import { FormErrorText } from "../landing/common/FormErrorText";
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   error?: boolean;
+  errorText?: string;
 };
 
 export const Input = ({ className, error = false, ...props }: Props) => {
@@ -51,6 +53,8 @@ export const Input = ({ className, error = false, ...props }: Props) => {
           {props.placeholder}
         </label>
       </div>
+
+      {props.errorText && error && <FormErrorText text={props.errorText} />}
     </div>
   );
 };
