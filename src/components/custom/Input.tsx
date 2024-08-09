@@ -1,14 +1,17 @@
 "use client";
 import React, { useRef, useState } from "react";
 
-type Props = React.InputHTMLAttributes<HTMLInputElement>;
+type Props = React.InputHTMLAttributes<HTMLInputElement> & {
+  error?: boolean;
+};
 
-export const Input: React.FC<Props> = ({ className, ...props }: Props) => {
+export const Input = ({ className, error = false, ...props }: Props) => {
   const [value, setValue] = useState<string>("");
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
+    props.onChange && props.onChange(e);
   };
   const handleContainerClick = () => {
     containerRef.current?.querySelector("input")?.focus();
@@ -21,7 +24,11 @@ export const Input: React.FC<Props> = ({ className, ...props }: Props) => {
       className="relative w-full"
     >
       <div
-        className={`h-14 px-4 py-1 rounded-md bg-black-on-neutral text-13px flex items-center transition-all duration-200 ease-in-out border-[1.5px] border-transparent focus-within:border-primary-border focus-within:ring-4 focus-within:ring-primary-ring ${className}`}
+        className={`h-14 px-4 py-1 rounded-md bg-black-on-neutral text-13px flex items-center transition-all duration-200 ease-in-out border-[1.5px] border-transparent ${
+          !error
+            ? "focus-within:border-primary-border focus-within:ring-primary-ring"
+            : "border-danger-500 ring-danger-100 ring-4"
+        }  focus-within:ring-4 ${className}`}
       >
         <input
           {...props}

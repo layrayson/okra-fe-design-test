@@ -34,6 +34,10 @@ const config: Config = {
           100: AppColors.blue[100],
           500: AppColors.blue[500],
         },
+        danger: {
+          100: AppColors.danger[100],
+          500: AppColors.danger[500],
+        },
         orange: {
           400: AppColors.orange[400],
           500: AppColors.orange[500],

@@ -9,6 +9,7 @@ type Props = React.SelectHTMLAttributes<HTMLSelectElement> & {
   placeholder?: string;
   containerClassName?: string;
   value?: string;
+  error?: boolean;
   options: string[];
 };
 
@@ -106,9 +107,13 @@ const Select = (props: Props) => {
     >
       <div
         onClick={handleSelectClick}
-        className={`h-14 px-4 py-1  rounded-md bg-black-on-neutral text-13px flex-grow flex  items-center transition-all duration-200 ease-in-out border-[1.5px] border-transparent ${
-          isOpen ? "border-primary-border ring-4 ring-primary-ring " : ""
-        } ${props.className}`}
+        className={`h-14 px-4 py-1  rounded-md bg-black-on-neutral text-13px flex-grow flex  items-center transition-all duration-200 ease-in-out border-[1.5px] ${
+          isOpen && !props.error
+            ? "border-primary-border ring-4 ring-primary-ring "
+            : "border-transparent"
+        } ${props.error ? "border-danger-500 ring-danger-100 ring-4" : ""} ${
+          props.className
+        }`}
       >
         <div className="flex justify-items-stretch items-center flex-grow">
           <p
@@ -134,7 +139,7 @@ const Select = (props: Props) => {
       {isOpen && !props.disabled && (
         <ul
           ref={menuRef}
-          className={`max-h-[326px] p-1  bg-white border border-border-light shadow-[0px_4px_4px_0px_#3F47590A,0px_8px_8px_0px_#00000014] w-full absolute z-[1000] overflow-y-auto overflow-x-hidden rounded-lg ${
+          className={`max-h-[326px] p-1 bg-white border border-border-light shadow-[0px_4px_4px_0px_#3F47590A,0px_8px_8px_0px_#00000014] w-full absolute z-[1000] overflow-y-auto overflow-x-hidden rounded-lg ${
             menuPosition === "bottom" ? "top-[50px]" : ""
           } ${menuPosition === "top" ? "bottom-[50px]" : ""} mt-[16px]`}
           onKeyDown={handleKeyDown}
@@ -160,25 +165,6 @@ const Select = (props: Props) => {
             </li>
           ))}
         </ul>
-        // <div
-        //   ref={menuRef}
-        //   className={`max-h-[326px] p-1  bg-white shadow-[0px_4px_4px_0px_#3F47590A,0px_8px_8px_0px_#00000014] w-full absolute z-[1000] overflow-y-auto overflow-x-hidden rounded-lg ${
-        //     menuPosition === "bottom" ? "top-[50px]" : ""
-        //   } ${menuPosition === "top" ? "bottom-[50px]" : ""} mt-[8px]`}
-        // >
-        //   {props.options.map((el, index) => (
-        //     <div
-        //       key={"select-option-" + index}
-        //       className={`min-h-8 py-1 px-2 flex items-center ${
-        //         el == props.value ? "bg-black-on-neutral" : "bg-white"
-        //       }  hover:bg-black-on-neutral  rounded-md`}
-        //     >
-        //       <p className="font-medium text-black-900 text-sm leading-22px">
-        //         Search Engine
-        //       </p>
-        //     </div>
-        //   ))}
-        // </div>
       )}
     </div>
   );
